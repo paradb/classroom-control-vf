@@ -5,7 +5,7 @@
 #
 # Global objects like filebuckets and resource defaults should go in this file,
 # as should the default node definition. (The default node can be omitted
-# if you use the console and don't define any other nodes in site.pp. See
+# if you use the console and don't rdefine any other nodes in site.pp. See
 # http://docs.puppetlabs.com/guides/language_guide.html#nodes for more on
 # node definitions.)
 
