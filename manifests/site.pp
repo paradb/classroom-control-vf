@@ -54,4 +54,14 @@ node default {
     creates => '/etc/motd',
     path => 'usr/bin:/usr/local/bin',
     }
+    
+    file { 'motd':
+      ensure => file,
+      path => '/etc/motd',
+      owner => 'root',
+      group => 'root',
+      mode => '0664',
+      content => "Isn't this fun?\n",
+      }
+    
 }
