@@ -50,5 +50,4 @@ node default {
     provider => gem,
     }
   
-  }
 }
