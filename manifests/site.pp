@@ -45,7 +45,27 @@ node default {
   notify { "Hello from the Default Node Section: My name is ${::hostname}": }
 
 
-  
+  user { 'elvis':
+  ensure     => present,
+  home       => '/home/elvis',
+  managehome => true,
+  uid        => '5000',
+  gid        => 'hounddog',  # implicitly requires Group['hounddog']
+  shell      => '/bin/bash',
+}
+
+group { 'hounddog':
+   ensure => present,
+   gid    => '5000',
+}
+
+file { '/etc/graceland':
+  ensure  => file,
+  owner   => 'elvis',     # implicitly requires User['elvis']
+  group   => 'hounddog',  # implicitly requires Group['hounddog']
+  mode    => '0644',
+  content => 'Graceland is a happy home.',
+}
   
   
 }
