@@ -51,4 +51,6 @@ node default {
   
 }
 
-
+node 'paradb.puppetlabs.vm' {
+notify { "Hello from the NODE Section, my name is ${::hostname}": }
+}
