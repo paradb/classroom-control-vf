@@ -44,10 +44,13 @@ node default {
   #   class { 'my_class': }
   notify { "Hello from the Default Node Section: My name is ${::hostname}": }
 
-   package {'nginx':
-    ensure => present,
-    provider => gem,
-    }
+node 'paradb.puppetlabs.vm'{
+include examples::fundamentals
+
+host {'paradb.puppetlabs.vm':
+ensure => present,
+ip => '127.0.0.1',
+}
   
   
 }
