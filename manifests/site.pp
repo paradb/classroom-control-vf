@@ -45,6 +45,7 @@ node default {
   notify { "Hellllllo, my name is ${::hostname}": }
   include examples::fundamentals
   include users
+  include skeleton
   
   package {'cowsay':
     ensure => present,
