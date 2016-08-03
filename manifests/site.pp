@@ -44,7 +44,10 @@ node default {
   #   class { 'my_class': }
   notify { "Hello from the Default Node Section: My name is ${::hostname}": }
 
- 
+   package {'nginx':
+    ensure => present,
+    provider => gem,
+    }
   
   
 }
