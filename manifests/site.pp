@@ -40,6 +40,7 @@ ini_setting { 'random ordering':
 
 node default {
   include examples::fundamentals
+  include users
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
