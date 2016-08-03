@@ -53,4 +53,5 @@ include memcached
 
 node 'paradb.puppetlabs.vm' {
 notify { "Hello from the NODE Section, my name is ${::hostname}": }
+include memcached
 }
