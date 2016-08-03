@@ -39,7 +39,35 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 node default {
-  notify { "Hello from the Default Section: My name is ${::hostname}": }
-}
-
-
+  # This is where you can declare classes for all nodes.
+  # Example:
+  #   class { 'my_class': }
+  notify { "${::fqdn} has no node definition": }
+  notify { "Hellllllo, my name is ${::hostname}": }
+  include examples::fundamentals
+  include users
+  include skeleton
+  
+  package {'cowsay':
+    ensure => present,
+    provider => gem,
+    }
+  
+  exec { "cowsay 'welcome to ${::fqdn}!' > /etc/motd":
+    creates => '/etc/motd',
+    path => 'usr/bin:/usr/local/bin',
+    }
+    
+    file { 'motd':
+      ensure => file,
+      path => '/etc/motd',
+      owner => 'root',
+      group => 'root',
+      mode => '0664',
+      content => "Isn't this fun?\n",
+      }
+      
+   host { 'testing.puppetlabs.vm':
+    ip => '127.0.0.1',
+  }
+  }
