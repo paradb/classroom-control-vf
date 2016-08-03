@@ -44,7 +44,17 @@ node default {
   #   class { 'my_class': }
   notify { "${::fqdn} has no node definition": }
   notify { "Hellllllo, my name is ${::hostname}": }
-  include examples::fundamentals
+   
+
+  
+  
+  
+}
+
+
+  node 'paradb.puppetlabs.vm' {
+notify { "Helllllloxxxxxxxxxxx, my name is ${::hostname}": }
+ include examples::fundamentals
   include users
   include skeleton
   
@@ -70,14 +80,5 @@ node default {
    host { 'testing.puppetlabs.vm':
     ip => '127.0.0.1',
   }
-  
 
-  
-  
-  
-}
-
-
-  node 'paradb.puppetlabs.vm' {
-notify { "Helllllloxxxxxxxxxxx, my name is ${::hostname}": }
 }
