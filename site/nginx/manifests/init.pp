@@ -15,7 +15,6 @@ file { '/etc/ssh/sshd_config':
 ensure => file,
 owner => 'root',
 group => 'root',
-require => Package['openssh'],
 source => 'puppet:///modules/ssh/sshd_config',
 }
 
