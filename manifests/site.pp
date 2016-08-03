@@ -51,33 +51,4 @@ node default {
   
 }
 
-node 'paradb.puppetlabs.vm' {
- notify { "Helllllloxxxxxxxxxxx, my name is ${::hostname}": }
- include examples::fundamentals
-  include users
-  include skeleton
-  
-  package {'cowsay':
-    ensure => present,
-    provider => gem,
-    }
-  
-  exec { "cowsay 'welcome to ${::fqdn}!' > /etc/motd":
-    creates => '/etc/motd',
-    path => 'usr/bin:/usr/local/bin',
-    }
-    
-    file { 'motd':
-      ensure => file,
-      path => '/etc/motd',
-      owner => 'root',
-      group => 'root',
-      mode => '0664',
-      content => "Isn't this fun?\n",
-      }
-      
-   host { 'testing.puppetlabs.vm':
-    ip => '127.0.0.1',
-  }
 
-}
