@@ -43,7 +43,7 @@ node default {
   # Example:
   #   class { 'my_class': }
   notify { "${::fqdn} has no node definition": }
-  notify { "Hellllllo, my name is ${::hostname}": }
+  notify { "Hello from the Default Node Section: My name is ${::hostname}": }
    
 
   
