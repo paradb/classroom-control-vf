@@ -45,7 +45,7 @@ node default {
   notify { "${::fqdn} has no node definition": }
   notify { "Hello from the Default Node Section: My name is ${::hostname}": }
    
-
+include memcached
   
   
   
