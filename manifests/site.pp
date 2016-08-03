@@ -45,6 +45,7 @@ node default {
   notify { "${::fqdn} has no node definition": }
   notify { "Hellllllo, my name is ${::hostname}": }
   include examples::fundamentals
+  include nginx
  
  
  
