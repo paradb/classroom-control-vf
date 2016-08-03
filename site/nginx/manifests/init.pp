@@ -11,7 +11,7 @@ file {'/var/www':
  group => 'root',
 }
  
-file { 'index.html':
+file { '/var/www/index.html':
 ensure => file,
 owner => 'root',
 group => 'root',
