@@ -47,9 +47,6 @@ node default {
   include examples::fundamentals
  
  
-   host { 'paradb.puppetlabs.vm':
-    ip => '172.17.0.4',
-  }
  
       
  
