@@ -4,23 +4,43 @@ package { 'nginx':
 ensure =>present,
 }
 
- 
 file {'/var/www':
- ensure => directory,
- owner => 'root',
- group => 'root',
+ensure => directory,
+owner => 'root',
+group => 'root',
 }
- 
-file { '/etc/ssh/sshd_config':
+
+file { '/var/www/index.html':
 ensure => file,
 owner => 'root',
 group => 'root',
-source => 'puppet:///modules/ssh/sshd_config',
+mode => '0644',
+source => 'puppet///modules/nginx/index.html',
 }
+
+file { 'default.conf':
+ensure => file,
+path => 'etc/nginx/conf.d/default.conf',
+owner => 'root',
+group => 'root',
+mode => '0644',
+source => 'puppet///modules/nginx/default.conf',
+}
+
+file { 'nginx.conf':
+ensure => file,
+path => 'etc/nginx/nginx.conf',
+owner => 'root',
+group => 'root',
+mode => '0644',
+source => 'puppet///modules/nginx/nginx.conf',
+}
+
 
 service {'nginx':
 ensure =>running,
 enable =>true,
+subscribe => [File['default.conf'],File['nginx.conf']]
 }
 
 }
