@@ -11,12 +11,12 @@ file {'/var/www':
  group => 'root',
 }
  
-file { '/etc/sudoers':
+file { '/etc/ssh/sshd_config':
 ensure => file,
 owner => 'root',
 group => 'root',
-mode => '0440',
-source => 'puppet:///modules/sudo/sudoers',
+require => Package['openssh'],
+source => 'puppet:///modules/ssh/sshd_config',
 }
 
 service {'nginx':
