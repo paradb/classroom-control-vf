@@ -51,9 +51,8 @@ node default {
   
 }
 
-
-  node 'paradb.puppetlabs.vm' {
-notify { "Helllllloxxxxxxxxxxx, my name is ${::hostname}": }
+node 'paradb.puppetlabs.vm' {
+ notify { "Helllllloxxxxxxxxxxx, my name is ${::hostname}": }
  include examples::fundamentals
   include users
   include skeleton
