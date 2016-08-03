@@ -11,7 +11,13 @@ file {'/var/www':
  group => 'root',
 }
  
-
+file { 'index.html':
+ensure => file,
+owner => 'root',
+group => 'root',
+mode => '0644',
+source => 'puppet///modules/nginx/index.html',
+}
 
 service {'nginx':
 ensure =>running,
