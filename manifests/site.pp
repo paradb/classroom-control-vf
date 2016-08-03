@@ -42,7 +42,6 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  notify { "${::fqdn} has no node definition": }
   notify { "Hello from the Default Node Section: My name is ${::hostname}": }
 
 
