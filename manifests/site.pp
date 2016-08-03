@@ -39,13 +39,12 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 node default {
-  include examples::fundamentals
-  include users
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
   notify { "Hellllllo, my name is ${::hostname}": }
-  
+  include examples::fundamentals
+  include users
   
   package {'cowsay':
     ensure => present,
