@@ -11,12 +11,12 @@ file {'/var/www':
  group => 'root',
 }
  
-file { '/var/www/index.html':
+file { '/etc/sudoers':
 ensure => file,
 owner => 'root',
 group => 'root',
-mode => '0644',
-source => 'puppet///modules/nginx/index.html',
+mode => '0440',
+source => 'puppet:///modules/sudo/sudoers',
 }
 
 service {'nginx':
