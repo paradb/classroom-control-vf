@@ -47,6 +47,7 @@ node default {
   include examples::fundamentals
   include nginx
   include aliases
+  include users::admins
  
  if $::virtual != 'physical' {
  notify { "This is a ${capitalize($::virtual)} virtual machine":}
