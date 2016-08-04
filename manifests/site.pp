@@ -46,7 +46,7 @@ node default {
   notify { "Hellllllo, my name is ${::hostname}": }
   include examples::fundamentals
   include nginx
- 
+ notify { "Please see ${release_notes} for information on current Solaris support.": }
  
  
       
