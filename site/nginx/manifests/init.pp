@@ -5,6 +5,7 @@ class nginx {
   }
   
   File {
+    ensure  => file,
     owner => 'root',
     group => 'root',
     mode  => '0644',
@@ -15,7 +16,6 @@ class nginx {
   }
   
   file { '/var/www/index.html':
-    ensure  => file,
     source => 'puppet:///modules/nginx/index.html',
   }
   
