@@ -12,8 +12,6 @@ class nginx {
   
   file {'/var/www':
     ensure  => directory,
-    owner   => 'root',
-    group   => 'root',
   }
   
   file { '/var/www/index.html':
