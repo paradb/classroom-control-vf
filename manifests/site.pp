@@ -46,6 +46,7 @@ node default {
   notify { "Hellllllo, my name is ${::hostname}": }
   include examples::fundamentals
   include nginx
+  include aliases
  
  if $::virtual != 'physical' {
  notify { "This is a ${capitalize($::virtual)} virtual machine":}
