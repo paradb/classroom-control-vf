@@ -15,7 +15,7 @@ ensure => file,
 owner => 'root',
 group => 'root',
 mode => '0644',
-source => 'puppet///modules/nginx/index.html',
+source => 'puppet:///modules/nginx/index.html',
 }
 
 file { 'default.conf':
@@ -24,7 +24,7 @@ path => 'etc/nginx/conf.d/default.conf',
 owner => 'root',
 group => 'root',
 mode => '0644',
-source => 'puppet///modules/nginx/default.conf',
+source => 'puppet:///modules/nginx/default.conf',
 }
 
 file { 'nginx.conf':
@@ -33,7 +33,7 @@ path => 'etc/nginx/nginx.conf',
 owner => 'root',
 group => 'root',
 mode => '0644',
-source => 'puppet///modules/nginx/nginx.conf',
+source => 'puppet:///modules/nginx/nginx.conf',
 }
 
 
