@@ -1,5 +1,24 @@
 class nginx {
 
+
+case $::operatingsystem {
+  'redhat', 'centos': { include redhat  } # apply the RedHat class
+  'debian', 'ubuntu': { include debian  } # apply the Debian class
+  'windows'         : { include windows } # apply the Windows class
+  'amazon': {
+    include amazon                       # include our EC2 config
+    include redhat                       # as well as the base RedHat class
+  }
+  'solaris': {
+      include solaris
+      notify { "Please see ${release_notes} for information on current Solaris support.": }
+  }
+  default:  { fail("Unsupported OS: ${::operatingsystem}") }
+}
+
+
+
+
   package { 'nginx':
     ensure =>present,
   }
