@@ -18,7 +18,7 @@ mode => '0644',
 source => 'puppet:///modules/nginx/index.html',
 }
 
-file { 'default.conf':
+file { 'etc/nginx/conf.d/default.conf':
 ensure => file,
 path => 'etc/nginx/conf.d/default.conf',
 owner => 'root',
