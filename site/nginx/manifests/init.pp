@@ -8,6 +8,7 @@ case $::osfamily {
   $docroot = '/var/www'
   $confdir = '/etc/nginx'
   $logdir = '/var/log/nginx'
+  $blockdir = "${confdir}/conf.d"
   }
 'windows' : {
   $package = 'nginx-service'
