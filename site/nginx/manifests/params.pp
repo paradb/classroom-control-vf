@@ -25,6 +25,6 @@ class nginx::params {
   'redhat' => 'nginx',
   'debian' => 'www-data',
   'windows' => 'nobody',
-   default +> 'nobody',
+   default => 'nobody',
   }
 }
